@@ -1,23 +1,29 @@
 #!/usr/bin/python3
+
 """
-This module is function that prints a text with 2 lines after '.', '?' and ':'.
+5-text_indentation.py
+Module containing a function changing some text.
 """
 
 
 def text_indentation(text):
     """
-    Prints text with 2 new lines after '.', '?' and ':'.
+    Adding blank lines in some text.
+
+    Parameters:
+    text (str): text to change
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-    i = 0
-    while i < len(text):
-        if text[i] in ".?:":
-            print(text[:i + 1].strip())
-            print()
-            text = text[i + 1:]
-            i = 0
-        else:
-            i += 1
-    if text.strip():
-        print(text.strip())
+
+    new = ""
+
+    for i in text:
+        new += i
+        if i in ".:?":
+            print("{}".format(new.strip()), end="\n\n")
+            new = ""
+
+    if new.strip() != "":
+        print("{}".format(new.strip()), end="")
+        
