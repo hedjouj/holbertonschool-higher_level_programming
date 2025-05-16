@@ -2,6 +2,8 @@
 """
 This module provides a function that adds two integers.
 """
+
+
 def add_integer(a, b=98):
     """Adds 2 integers or floats, returns an integer."""
     if not isinstance(a, (int, float)):
