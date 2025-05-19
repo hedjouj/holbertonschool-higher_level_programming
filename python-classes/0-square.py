@@ -2,6 +2,7 @@
 """Mdoule that defines a square class.
 """
 
+
 class Square:
     """Represents a square.
     """
