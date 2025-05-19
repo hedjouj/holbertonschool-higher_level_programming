@@ -2,6 +2,8 @@
 """Mudole 1-square
 Defines a square class.
 """
+
+
 class Square:
     """Represents a square.
     """
@@ -12,4 +14,3 @@ class Square:
             size (int): The size of the square.
         """
         self.__size = size
-        
