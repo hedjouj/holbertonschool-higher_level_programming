@@ -1,21 +1,23 @@
 #!/usr/bin/python3
-"""Class that defines a square by size and position, with area and print methods."""
+"""Defines a Square class with size and position."""
 
 
 class Square:
-    """Defines a square with size and position."""
+    """A class that defines a square by its size and position."""
+
     def __init__(self, size=0, position=(0, 0)):
+        """Initialize a square with optional size and position."""
         self.size = size
         self.position = position
 
     @property
     def size(self):
-        """Retrieve the size of the square."""
+        """Getter for size."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Set the size of the square with validation."""
+        """Setter for size with validation."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -24,14 +26,16 @@ class Square:
 
     @property
     def position(self):
-        """Retrieve the position of the square."""
+        """Getter for position."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Set the position of the square with validation."""
-        if (not isinstance(value, tuple) or len(value) != 2 or
-            not all(isinstance(num, int) and num >= 0 for num in value)):
+        """Setter for position with validation."""
+        if (not isinstance(value, tuple) or
+            len(value) != 2 or
+            not all(isinstance(v, int) for v in value) or
+            not all(v >= 0 for v in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
@@ -40,11 +44,15 @@ class Square:
         return self.__size ** 2
 
     def my_print(self):
-        """Print the square with the character # at position."""
+        """Print the square with '#' character respecting position."""
         if self.__size == 0:
             print()
             return
-        [print() for _ in range(self.__position[1])]
+
+        # Print vertical position (new lines)
+        for _ in range(self.__position[1]):
+            print()
+
+        # Print the square lines with horizontal spacing
         for _ in range(self.__size):
             print(" " * self.__position[0] + "#" * self.__size)
-
