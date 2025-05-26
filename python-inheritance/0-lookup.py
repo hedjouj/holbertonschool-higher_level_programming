@@ -3,5 +3,12 @@
 
 
 def lookup(obj):
-    """look after the object"""
-    print(dir(object))
+    """look after the object
+
+    Args:
+        obj: Any python object.
+
+        Returns:
+        list: list of names
+    """
+    return dir(obj)
