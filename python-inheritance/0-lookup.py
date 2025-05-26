@@ -3,4 +3,5 @@
 
 
 def lookup(obj):
+    """look after the object"""
     print(dir(object))
