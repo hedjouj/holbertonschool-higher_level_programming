@@ -7,11 +7,6 @@ class BaseGeometry:
     """classe pour forme géométrique
     """
 
-    def area(self):
-        """raises an exception
-        """
-        raise Exception("area() is not implemented")
-
     def integer_validator(self, name, value):
         """validate the value
         """
