@@ -4,4 +4,6 @@
 
 
 class BaseGeometry:
+    """classe pour forme géométrique
+    """
     pass
