@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-import math
 from abc import ABC, abstractmethod
+import math
+
+# Abstract base class
 
 
-# Classe abstraite
 class Shape(ABC):
     @abstractmethod
     def area(self):
@@ -13,7 +14,7 @@ class Shape(ABC):
     def perimeter(self):
         pass
 
-# Classe Circle qui hérite de Shape
+# Concrete class: Circle
 
 
 class Circle(Shape):
@@ -26,7 +27,7 @@ class Circle(Shape):
     def perimeter(self):
         return 2 * math.pi * self.radius
 
-# Classe Rectangle qui hérite de Shape
+# Concrete class: Rectangle
 
 
 class Rectangle(Shape):
@@ -40,7 +41,7 @@ class Rectangle(Shape):
     def perimeter(self):
         return 2 * (self.width + self.height)
 
-# Fonction shape_info qui utilise le duck typing
+# Duck-typed function
 
 
 def shape_info(shape):
