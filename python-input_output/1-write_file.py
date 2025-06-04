@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""a function that print nb of char"""
 
 
 def write_file(filename="", text=""):
