@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-"""return the dictionnary description with simple data"""
-import json
+"""
+returns the dictionnary
+"""
 
 
 def class_to_json(obj):
-    """save class to json rep"""
+    """
+    Returns the dictionary description for JSON serialization of an object.
+    """
     return obj.__dict__
