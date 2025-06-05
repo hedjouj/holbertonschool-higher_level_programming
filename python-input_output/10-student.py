@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""""""
+"""define a stud with filtering for json serialization"""
 
 
 class Student:
