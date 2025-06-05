@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""""""
+"""define a student with seri/deserialization"""
 
 
 class Student:
