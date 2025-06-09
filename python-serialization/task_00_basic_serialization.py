@@ -13,11 +13,8 @@ def serialize_and_save_to_file(data, filename):
         data: Dictionnaire Python à sérialiser
         filename: Nom du fichier JSON de sortie
     """
-    try:
-        with open(filename, 'w', encoding='utf-8') as file:
-            json.dump(data, file, indent=4)
-    except Exception as e:
-        print(f"Erreur lors de la sérialisation: {e}")
+    with open(filename, 'w', encoding='utf-8') as file:
+        json.dump(data, file, indent=4)
 
 
 def load_and_deserialize(filename):
@@ -30,9 +27,5 @@ def load_and_deserialize(filename):
     Returns:
         dict: Dictionnaire Python désérialisé
     """
-    try:
-        with open(filename, 'r', encoding='utf-8') as file:
-            return json.load(file)
-    except Exception as e:
-        print(f"Erreur lors de la désérialisation: {e}")
-        return None
+    with open(filename, 'r', encoding='utf-8') as file:
+        return json.load(file)
