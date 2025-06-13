@@ -2,7 +2,7 @@
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-app.users = {}
+users = {}  # <-- Move users outside the app context
 
 @app.route('/')
 def home():
@@ -14,11 +14,11 @@ def status():
 
 @app.route('/data')
 def data():
-    return jsonify(list(app.users.keys()))
+    return jsonify(list(users.keys()))
 
 @app.route('/users/<username>')
 def get_user(username):
-    user = app.users.get(username)
+    user = users.get(username)
     if user:
         return jsonify(user)
     else:
@@ -27,13 +27,12 @@ def get_user(username):
 @app.route('/add_user', methods=['POST'])
 def add_user():
     data = request.get_json()
-
     username = data.get("username")
 
     if not username:
         return jsonify({"error": "Username is required"}), 400
 
-    if username in app.users:
+    if username in users:
         return jsonify({"error": "Username already exists"}), 400
 
     user_data = {
@@ -43,7 +42,7 @@ def add_user():
         "city": data.get("city")
     }
 
-    app.users[username] = user_data
+    users[username] = user_data
 
     return jsonify({
         "message": "User added",
