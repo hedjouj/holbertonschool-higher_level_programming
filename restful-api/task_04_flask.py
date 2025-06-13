@@ -2,8 +2,6 @@
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
-
-# Stockage des utilisateurs attaché à l'application
 app.users = {}
 
 @app.route('/')
