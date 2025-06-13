@@ -15,6 +15,8 @@ def load_users():
 def save_users(users):
     with open(USERS_FILE, "w") as f:
         json.dump(users, f)
+        f.flush()
+        os.fsync(f.fileno())
 
 @app.route('/')
 def home():
