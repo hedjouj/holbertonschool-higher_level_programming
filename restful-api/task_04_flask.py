@@ -36,7 +36,7 @@ def add_user():
         return jsonify({"error": "Username is required"}), 400
 
     if username in app.users:
-        return jsonify({"error": "User already exists"}), 400
+        return jsonify({"error": "Username already exists"}), 400
 
     user_data = {
         "username": username,
