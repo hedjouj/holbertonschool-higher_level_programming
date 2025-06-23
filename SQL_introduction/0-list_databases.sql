@@ -1,2 +1,2 @@
---list all data--
-SELECT * FROM mysql;
+--list all data
+SHOW mysql;
