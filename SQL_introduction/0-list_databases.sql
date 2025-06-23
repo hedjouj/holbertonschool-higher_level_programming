@@ -1,2 +1,2 @@
-'''list all data'''
+--list all data
 SELECT *
