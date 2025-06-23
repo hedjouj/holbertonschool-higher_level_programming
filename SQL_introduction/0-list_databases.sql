@@ -1,2 +1,2 @@
 --list all data
-SELECT *;
+SHOW DATABASES;
