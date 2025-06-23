@@ -1,2 +1,2 @@
 --list all data
-SHOW mysql;
+SHOW * mysql;
