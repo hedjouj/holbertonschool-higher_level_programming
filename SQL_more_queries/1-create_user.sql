@@ -1,3 +1,3 @@
--- create a user 
-CREATE user 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
-GRANTS ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
+-- create a user and grant all privileges
+CREATE user IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
