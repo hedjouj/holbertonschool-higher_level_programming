@@ -1,6 +1,6 @@
 -- list all cities of california in database 
-use hbtn_0d_usa;
-SELECT id, name from cities
+SELECT id, name
+from cities
 WHERE state_id = (
     SELECT id from states WHERE name = 'California'
 )
