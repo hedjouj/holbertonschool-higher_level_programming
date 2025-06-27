@@ -10,8 +10,9 @@ import sys
 
 
 def list_states(username, password, db_name):
-    """Connects to a MySQL database and retrieves all rows from the 'states' table.
-    The results are sorted in ascending order by the column 'id'."""
+    """Connects to a MySQL database and retriev
+    es all rows from the 'states' table.
+    The results are sorted in ascending."""
     conn = MySQLdb.connect(
         host="localhost", port=3306, user=username, passwd=password, db=db_name
     )
@@ -22,6 +23,7 @@ def list_states(username, password, db_name):
         print(row)
     cur.close()
     conn.close()
+
 
 if __name__ == "__main__":
     list_states(sys.argv[1], sys.argv[2], sys.argv[3])
