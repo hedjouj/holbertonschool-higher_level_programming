@@ -10,7 +10,7 @@ if __name__ == "__main__":
     )
     cur = conn.cursor()
     cur.execute
-    ("SELECT * FROM states WHERE name = %s ORDER BY id ASC", (sys.argv[4],))
+    "SELECT * FROM states WHERE name = %s ORDER BY id ASC", (sys.argv[4],)
     [print(row) for row in cur.fetchall()]
     cur.close()
     conn.close()
