@@ -27,4 +27,3 @@ def fetch_first_state(username, password, db_name):
 
 if __name__ == "__main__":
     fetch_first_state(sys.argv[1], sys.argv[2], sys.argv[3])
-
