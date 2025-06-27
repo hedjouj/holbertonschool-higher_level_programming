@@ -18,7 +18,7 @@ def filter_states(username, password, db_name):
         host="localhost", port=3306, user=username, passwd=password, db=db_name
     )
     cur = conn.cursor()
-    query = ("SELECT * FROM states WHERE name ='N%' ORDER by id ASC")
+    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER by id ASC"
     cur.execute(query)
     rows = cur.fetchall()
     for row in rows:
