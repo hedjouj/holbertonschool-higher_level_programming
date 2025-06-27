@@ -19,7 +19,8 @@ def delete_states_with_a(username, password, db_name):
         pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    session.query(State).filter(State.name.like('%a%')).delete(synchronize_session='fetch')
+    session.query(State).filter(State.name.like('%a%')).delete
+    (synchronize_session='fetch')
     session.commit()
     session.close()
 
