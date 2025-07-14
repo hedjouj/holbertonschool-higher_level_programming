@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 let max1 = parseFloat(process.argv[2]);
 let max2 = parseFloat(process.argv[3]);
 if (parseFloat(process.argv[2]) < parseFloat(process.argv[3])) {
