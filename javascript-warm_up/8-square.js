@@ -17,5 +17,4 @@ function boucle () {
     console.log(str);
   }
 }
-
 if (isNumeric(process.argv[2])) { boucle(); } else { console.log('Missing size'); }
