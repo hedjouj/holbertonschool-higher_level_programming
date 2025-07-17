@@ -18,11 +18,16 @@ def generate_invitations(template, attendees):
     # Process each attendee
     for index, attendee in enumerate(attendees, start=1):
         try:
-            # Replace placeholders with attendee data or "N/A" if missing
-            invitation = template.replace("{name}", attendee.get("name", "N/A"))
-            invitation = invitation.replace("{event_title}", attendee.get("event_title", "N/A"))
-            invitation = invitation.replace("{event_date}", attendee.get("event_date", "N/A"))
-            invitation = invitation.replace("{event_location}", attendee.get("event_location", "N/A"))
+            # Replace placeholders with attendee data or "N/A" if missing or None
+            name = attendee.get("name", "N/A") if attendee.get("name") is not None else "N/A"
+            event_title = attendee.get("event_title", "N/A") if attendee.get("event_title") is not None else "N/A"
+            event_date = attendee.get("event_date", "N/A") if attendee.get("event_date") is not None else "N/A"
+            event_location = attendee.get("event_location", "N/A") if attendee.get("event_location") is not None else "N/A"
+
+            invitation = template.replace("{name}", name)
+            invitation = invitation.replace("{event_title}", event_title)
+            invitation = invitation.replace("{event_date}", event_date)
+            invitation = invitation.replace("{event_location}", event_location)
 
             # Generate output file
             output_filename = f"output_{index}.txt"
@@ -47,3 +52,4 @@ if __name__ == "__main__":
 
     # Call the function with the template and attendees list
     generate_invitations(template_content, attendees)
+
