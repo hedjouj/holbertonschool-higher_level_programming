@@ -16,20 +16,20 @@ x = 10
 print(id(x))  # Output: Memory address of x
 print(type(x))  # Output: <class 'int'>
 
-Mutable Objects
+## Mutable Objects
 Mutable objects can be changed after they are created. Think of them like a to-do list where you can add or remove tasks. Lists and dictionaries in Python are mutable.
 my_list = [1, 2, 3]
 my_list.append(4)  # Adds 4 to the list
 print(my_list)  # Output: [1, 2, 3, 4]
 
-Immutable Objects
+## Immutable Objects
 Immutable objects cannot be changed after they are created, like a photo that can't be altered once taken. Numbers, strings, and tuples in Python are immutable.
 my_tuple = (1, 2, 3)
 # my_tuple[0] = 4  # This would cause an error
 new_tuple = my_tuple + (4,)  # Creates a new tuple
 print(new_tuple)  # Output: (1, 2, 3, 4)
 
-Why It Matters
+## Why It Matters
 Knowing whether an object is mutable or immutable is important because it affects how you can modify it. Mutable objects can be changed directly, while immutable objects require creating a new object for any changes.
 def change_list(lst):
     lst.append(4)  # Changes the original list
@@ -45,7 +45,7 @@ my_tuple = (1, 2, 3)
 change_tuple(my_tuple)
 print(my_tuple)  # Output: (1, 2, 3)
 
-How Arguments Are Passed to Functions
+## How Arguments Are Passed to Functions
 When you pass an object to a function, Python passes a reference to that object. This means if the object is mutable, the function can modify it. If it's immutable, the function cannot change the original object.
 def increment(n):
     n += 1  # Creates a new number
