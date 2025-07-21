@@ -14,3 +14,6 @@ Every object in Python has an identity, a type, and a value. The identity of an 
 x = 10
 print(id(x))  # Output: Memory address of x
 print(type(x))  # Output: <class 'int'>
+
+Mutable Objects
+Mutable objects can be changed after they are created. Think of them like a to-do list where you can add or remove tasks. Lists and dictionaries in Python are mutable.
