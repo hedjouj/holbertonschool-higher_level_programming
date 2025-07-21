@@ -44,3 +44,20 @@ def change_tuple(tup):
 my_tuple = (1, 2, 3)
 change_tuple(my_tuple)
 print(my_tuple)  # Output: (1, 2, 3)
+
+How Arguments Are Passed to Functions
+When you pass an object to a function, Python passes a reference to that object. This means if the object is mutable, the function can modify it. If it's immutable, the function cannot change the original object.
+def increment(n):
+    n += 1  # Creates a new number
+
+a = 1
+increment(a)
+print(a)  # Output: 1
+
+def add_to_list(lst):
+    lst.append(4)  # Modifies the original list
+
+b = [1, 2, 3]
+add_to_list(b)
+print(b)  # Output: [1, 2, 3, 4]
+
